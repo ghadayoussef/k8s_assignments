@@ -1,0 +1,25 @@
+# To create this file from terminal by kubectl command
+# kubectl run cli-pod --image=nginx --dry-run=client -o yam > cli-pod.yaml  
+
+# cli-pod → Pod name
+# --image=nginx → nginx image
+# --dry-run=client → don't actually create the Pod
+# -o yaml → output YAML
+# > → save the output to cli-pod.yaml  
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cli-pod
+  labels:
+    run: cli-pod
+    source: cli
+spec:
+  containers:
+  - image: nginx
+    name: cli-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
