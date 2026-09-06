@@ -1,0 +1,15 @@
+#  kubectl describe pods pod nginx-pod 
+# Name:             nginx-pod  
+# Namespace:        development
+# IP:               10.244.0.54
+# Node:             minikube/192.168.49.2 
+# Labels:           app=web
+#                   envrionmnet=development
+
+
+# kubectl explain pod.spec.containers  
+
+# DESCRIPTION:
+# List of containers belonging to the pod. Containers cannot currently be   
+# added or removed. There must be at least one container in a Pod. Cannot be updated
+# A single application container that you want to run within a pod.

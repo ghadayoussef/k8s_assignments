@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: react-pod
+  labels:
+    app: frontend
+spec:
+  containers:
+    - name: react
+      image: node:20
+      command: ["sleep", "3600"]
+      ports:
+        - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-backend-pod
+  labels:
+    app: backend
+spec:
+  containers:
+    - name: node-backend
+      image: node:20
+      command: ["sleep", "3600"]
+      ports:
+        - containerPort: 4000
+
+
+#  kubectl get pods -l app=frontend 
+#  kubectl get pods -l app=backend
+# kubectl label pod react-pod tier=web  
+# kubectl get pods -l tier=web
+#  kubectl get pod react-pod --show-labels
