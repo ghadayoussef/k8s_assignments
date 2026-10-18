@@ -1,3 +1,4 @@
+# https://github.com/aelbaz926/kubernetes-course/blob/main/04-replicaset/adopted-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
