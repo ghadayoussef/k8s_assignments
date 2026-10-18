@@ -22,3 +22,9 @@ spec:
           image: nginx:1.21
           ports:
             - containerPort: 80
+
+
+# kubectl rollout status deployment/web-deployment
+# kubectl get deployment web-deployment
+# kubectl get rs -l app=web-deploy
+# kubectl get pods -l app=web-deploy -o wide

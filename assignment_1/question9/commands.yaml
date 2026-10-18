@@ -1,0 +1,23 @@
+# kubectl set image deployment/web-app-deployment nginx=nginx:1.22
+# kubectl annotate deployment/web-app-deployment kubernetes.io/change-cause="update image to nginx:1.22"
+# kubectl rollout status deployment/web-app-deployment
+# kubectl get pods -l app=web-app -w
+
+# Step 3: View history
+# ghada@DESKTOP-8CAJDTP:/mnt/d/Devops Route Course/kubernetes/k8s-assignment-answers/k8s_assignments/assignment_1/question8$ kubectl rollout history deployment/web-app-deployment
+# deployment.apps/web-app-deployment 
+# REVISION  CHANGE-CAUSE
+# 1         <none>
+# 2         update image to nginx:1.22
+
+# Step 4: Rollback
+
+# kubectl rollout undo deployment/web-app-deployment
+# kubectl rollout status deployment/web-app-deployment
+
+
+# Step 5: Verify the Rollback
+
+# kubectl describe deployment web-app-deployment | grep Image
+# kubectl get rs -l app=web-app-deploy
+# kubectl rollout history deployment/web-app-deployment
